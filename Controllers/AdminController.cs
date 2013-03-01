@@ -1,5 +1,6 @@
 ﻿using LucidEdge.DataMapping;
-using LucidEdge.DataMapping.Samples.SqlScripts;
+using Newtonsoft.Json;
+using StockPickem.Data.Sql;
 using StockPickem.Models;
 using StockPickem.Views;
 using System;
@@ -30,7 +31,7 @@ namespace StockPickem.Controllers
 		{
 			Requests.DropTable("DROP TABLE IF EXISTS stock_picks");
 
-			var status = Requests.Create(UserScripts.Create_Stock_Picks_Table);
+			var status = Requests.Create(SqlRequests.StockPicks.CreateStockPicksTable);
 
 			return RedirectToAction("Index", new { msg = string.Format("'stock_picks' table created with status {0}", status) });
 		}
@@ -43,18 +44,48 @@ namespace StockPickem.Controllers
 			return RedirectToAction("Index", new { msg = "Test data was inserted into 'stock_picks'" });
 		}
 
-		public ActionResult UserPicks()
+		public ActionResult UserPerformance()
 		{
-			var model = new UserPicks_Page_Model();
+			var model = new UserPerformance_Page_Model();
 			model.Init();
+			model.Load();
 
 			var doc = new DefaultDocument()
 			{
-				PageView = (new UserPicks_Page() { Model = model}).ToHtml()
+				PageView = (new UserPerformance_Page() { Model = model}).ToHtml()
 			};
+
+			doc.Scripts.Add("Content/Scripts/AdminUserPerformance.js");
 
 			return
 			Content(doc.ToHtml().ToString());
+		}
+
+		public ActionResult LoadUserPerformance(string username)
+		{
+			var model = new UserPerformance_Model();
+			model.Init(username);
+			model.Load();
+
+			var view = new UserPerformance_MainModule() { Model = model };
+			return Json(new
+			{
+				module = view.ToHtml().ToString(),
+				chartData = model.ChartData.ChartData,
+				symbols = model.Symbols
+			});
+		}
+
+		public ActionResult LoadPerformanceChart(string symbol, string username)
+		{
+			PerformanceChart_Model PerformaceChart = new PerformanceChart_Model() { Symbol = symbol, UserName = username };
+			PerformaceChart.Init();
+			PerformaceChart.Load();
+
+			return Json(new
+			{
+				chartData = PerformaceChart.ChartData
+			});
 		}
     }
 }

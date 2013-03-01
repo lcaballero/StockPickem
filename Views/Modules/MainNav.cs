@@ -29,7 +29,7 @@ namespace StockPickem.Views.Modules
 							).AddClassIf(ActiveItem == "myprogress", () => "active"),
 							"li".AddIf(IsAuthenticated && AuthUserName == "ryan" || AuthUserName == "lucas",
 								() => "a".Attr("href", "/Admin/Index").Add("Admin")
-							).AddClassIf(ActiveItem == "admin", () => "active")
+							).AddClassIf(ActiveItem == "Admin", () => "active")
 						),
 						"div.t1.pull-right".AddIf(ShowLogin, 
 							() => {

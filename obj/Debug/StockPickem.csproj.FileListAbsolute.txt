@@ -69,3 +69,6 @@ C:\Users\ryanolsen\Documents\Visual Studio 2012\Projects\StockPickem\bin\Npgsql.
 C:\Users\ryanolsen\Documents\Visual Studio 2012\Projects\StockPickem\bin\Mono.Security.dll
 C:\Users\ryanolsen\Documents\Visual Studio 2012\Projects\StockPickem\bin\Npgsql.pdb
 C:\Users\ryanolsen\Documents\Visual Studio 2012\Projects\StockPickem\bin\Npgsql.xml
+C:\Users\ryanolsen\Documents\Visual Studio 2012\Projects\StockPickem\obj\Debug\StockPickem.csproj.GenerateResource.Cache
+C:\Users\ryanolsen\Documents\Visual Studio 2012\Projects\StockPickem\obj\Debug\StockPickem.Data.Sql.UserSqlScripts.resources
+C:\Users\ryanolsen\Documents\Visual Studio 2012\Projects\StockPickem\obj\Debug\StockPickem.Data.Sql.StockPicksSqlScripts.resources

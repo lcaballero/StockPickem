@@ -1,5 +1,5 @@
 ﻿using LucidEdge.DataMapping;
-using LucidEdge.DataMapping.Samples.DomainObjects;
+using StockPickem.DomainObjects;
 using System;
 using System.Collections.Generic;
 using System.Linq;

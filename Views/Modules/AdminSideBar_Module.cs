@@ -30,8 +30,8 @@ namespace StockPickem.Views.Modules
 						),
 						"li.nav-header".Add("Admin tools"),
 						"li".Add(
-							"a".Attr("href", "/Admin/UserPicks").Add("User picks")
-						).AddClassIf(ActiveItem == "userpicks", () => "active")
+							"a".Attr("href", "/Admin/UserPerformance").Add("User Performance")
+						).AddClassIf(ActiveItem == "UserPerformance", () => "active")
 					)
 				)
 			);

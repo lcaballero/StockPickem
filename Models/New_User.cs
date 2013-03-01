@@ -1,5 +1,5 @@
 ﻿using LucidEdge.DataMapping;
-using LucidEdge.DataMapping.Samples.SqlScripts;
+using StockPickem.Data.Sql;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,7 +24,7 @@ namespace StockPickem.Models
 				.Add("password", pw)
 				.Add("username", userName);
 
-			UserScripts.Insert_User.Insert(dps);
+			SqlRequests.UserScripts.InsertUser.Insert(dps);
 		}
 	}
 }
