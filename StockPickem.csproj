@@ -41,15 +41,10 @@
   <ItemGroup>
     <Reference Include="LucidEdge.DataMapping, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\GitHub\LucidEdge.DataMapping\LucidEdge.DataMapping\bin\Debug\LucidEdge.DataMapping.dll</HintPath>
+      <HintPath>packages\LucidEdge.DataMapping.1.0.1\lib\net40\LucidEdge.DataMapping.dll</HintPath>
     </Reference>
-    <Reference Include="LucidEdge.DataMapping.Samples, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\GitHub\LucidEdge.DataMapping\LucidEdge.DataMapping.Samples\bin\Debug\LucidEdge.DataMapping.Samples.dll</HintPath>
-    </Reference>
-    <Reference Include="LucidEdge.HtmlFragment, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\GitHub\LucidEdge\LucidEdge.Html\LucidEdge.Html\bin\Debug\LucidEdge.HtmlFragment.dll</HintPath>
+    <Reference Include="LucidEdge.Html">
+      <HintPath>packages\LucidEdge.Html.1.0.0\lib\net40\LucidEdge.Html.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Npgsql, Version=2.0.11.93, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">

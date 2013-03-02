@@ -16,10 +16,9 @@ namespace StockPickem.Models
 			int count = 10;
 
 			DateTime eDate = DateTime.Today;
-			List<List<DataPoint>> dbPoints = new List<List<DataPoint>>();
+			List<List<IDataPoint>> dbPoints = new List<List<IDataPoint>>();
 
-			var users = SqlRequests.UserScripts.ReadAllUsers.Read<User>(
-				new List<DataPoint>());
+			var users = SqlRequests.UserScripts.ReadAllUsers.Read<User>();
 
 			for (int i = 0; i < count; i++)
 			{
@@ -27,7 +26,7 @@ namespace StockPickem.Models
 
 				var sDate = eDate.AddDays(duration_days * -1);
 
-				var dps = new List<DataPoint>()
+				var dps = new List<IDataPoint>()
 					.Add("symbol", "AAPL")
 					.Add("user", "lucas")
 					.Add("duration_days", duration_days)
@@ -41,7 +40,7 @@ namespace StockPickem.Models
 								? 1 
 								: -1);
 
-				dbPoints.Add(dps);
+				dbPoints.Add(dps.ToList());
 
 				eDate = sDate;
 			}
